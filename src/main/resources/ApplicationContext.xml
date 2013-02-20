@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="conenctionManager" class="com.pech.webdashboard.reporttest.data.ConnectionManager" />
+
+	<bean id="metricsByDayDao"
+		class="com.pech.webdashboard.reporttest.dao.impl.MetricsByDayDaoJDBCImpl">
+	</bean>
+	<bean id="metricsByWeekDao"
+		class="com.pech.webdashboard.reporttest.dao.impl.MetricsByWeekDaoJDBCImpl">
+	</bean>
+
+	<bean id="metricsByDayBo"
+		class="com.pech.webdashboard.reporttest.bo.impl.MetricsByDayBoDefaultImpl">
+		<constructor-arg name="metricsByDayDao" ref="metricsByDayDao" />
+	</bean>
+	<bean id="metricsByWeekBo"
+		class="com.pech.webdashboard.reporttest.bo.impl.MetricsByWeekBoDefaultImpl">
+		<constructor-arg name="metricsByWeekDao" ref="metricsByWeekDao" />
+	</bean>
+
+	<bean id="reportGenerator" class="com.pech.webdashboard.reporttest.ReportGenerator">
+		<constructor-arg name="metricsByDayBo" ref="metricsByDayBo" />
+		<constructor-arg name="metricsByWeekBo" ref="metricsByWeekBo" />
+	</bean>
+
+</beans>
