@@ -12,7 +12,6 @@ import java.util.Set;
 
 import com.pech.webdashboard.reporttest.bo.MetricsByDayBo;
 import com.pech.webdashboard.reporttest.dao.MetricsByDayDao;
-import com.pech.webdashboard.reporttest.dao.impl.MetricsByDayDaoJDBCImpl;
 import com.pech.webdashboard.reporttest.vo.Metric;
 import com.pech.webdashboard.reporttest.vo.MetricByDay;
 
@@ -20,8 +19,8 @@ public class MetricsByDayBoDefaultImpl implements MetricsByDayBo {
 
 	private MetricsByDayDao metricsByDayDao;
 
-	public MetricsByDayBoDefaultImpl() {
-		metricsByDayDao = new MetricsByDayDaoJDBCImpl();
+	public MetricsByDayBoDefaultImpl(MetricsByDayDao metricsByDayDao) {
+		this.metricsByDayDao = metricsByDayDao;
 	}
 
 	public void generateReport(Calendar fromCal, Calendar toCal, String file)
