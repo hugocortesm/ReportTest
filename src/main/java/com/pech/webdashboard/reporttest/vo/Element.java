@@ -12,6 +12,7 @@ public class Element implements Serializable {
 	private String description;
 	private Integer oneNumber;
 	private String newProperty;
+	private Long longPropery;
 
     public Integer getId() {
         return id;
@@ -60,4 +61,12 @@ public class Element implements Serializable {
 	public void setOneNumber(Integer oneNumber) {
 		this.oneNumber = oneNumber;
 	}
+	
+	public Long getLongProperty() {
+        return longProperty;
+    }
+
+    public void setLongProperty(Long longProperty) {
+        this.longProperty = longProperty;
+    }
 }
