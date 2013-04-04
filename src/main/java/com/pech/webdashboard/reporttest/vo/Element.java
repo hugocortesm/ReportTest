@@ -13,6 +13,7 @@ public class Element implements Serializable {
     private String description;
     private Integer oneNumber;
     private String newProperty;
+    private Long longProperty;
     private BigDecimal bigProperty;
 
     public Integer getId() {
@@ -69,6 +70,15 @@ public class Element implements Serializable {
 
     public void setBigProperty(BigDecimal bigProperty) {
         this.bigProperty = bigProperty;
+    }
+
+
+	public Long getLongProperty() {
+        return longProperty;
+    }
+
+    public void setLongProperty(Long longProperty) {
+        this.longProperty = longProperty;
     }
 
 }
