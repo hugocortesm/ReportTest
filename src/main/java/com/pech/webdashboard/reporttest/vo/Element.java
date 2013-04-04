@@ -10,6 +10,7 @@ public class Element implements Serializable {
 	private String elementId;
 	private String name;
 	private String description;
+	private Integer oneNumber;
 
 	public Integer getId() {
 		return id;
@@ -43,4 +44,11 @@ public class Element implements Serializable {
 		this.description = description;
 	}
 
+	public Integer getOneNumber() {
+		return oneNumber;
+	}
+
+	public void setOneNumber(Integer oneNumber) {
+		this.oneNumber = oneNumber;
+	}
 }
